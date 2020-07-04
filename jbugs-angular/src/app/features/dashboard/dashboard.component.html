@@ -1,0 +1,59 @@
+<mat-toolbar class="navColor">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()"  i18n="menu|The field is menu">menu</mat-icon>
+    </button>
+    <h1 i18n>Menu</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button routerLink="users" routerLinkActive="active current"
+         i18n="UserManagement|The button for UserManagement">User Management</a>
+      <a mat-button routerLink="permissions" routerLinkActive="active current"
+         i18n="PermissionManagement|The button for PermissionManagement">Permission Management</a>
+      <a mat-button  routerLink="bugs" routerLinkActive="active current"
+         i18n="BugManagement|The button for BugManagement">Bug management</a>
+      <a mat-button routerLink="aboutYou" style="color: black" routerLinkActive="active current" class="second-material" >{{userName}}</a>
+      <a mat-button routerLink="login" style="color: black" routerLinkActive="active current" class="material" (click)="logout()" href=""
+         i18n="logOut|The field is logOut">Log Out</a>
+      <img class="third-material"src="https://sapui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg?fbclid=IwAR0UQB7qhbvXS1qRd_f3RaTmzzTAs4S1pmH78o3gs4qFG9ToW0MVJCp09lw.jpg "/>
+      <img class="fourth-material" src="https://sapui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1032.jpg?fbclid=IwAR2tCDziwSXwxvQ4Gysr3txNvpY-g1r2Q8LlXdeth2tCU6hYTV-5xigbjYA.jpg"/>
+      <img class="five-material" src="https://sapui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1030.jpg?fbclid=IwAR31QgD54Qe9zEa2coObaaPsIWWelfb1-eEojE6WpL5qjM3I-2E4JoyNxSc.jpg"/>
+
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span style="font-size: 12px;">
+      <h4 i18n="Title|The title of the first page">Welcome to Software Issues Tracking System!</h4>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <li role="presentation" routerLinkActive="active">
+        <a mat-list-item routerLink="bugs/statistics"
+           i18n="viewBug|The field is viewBug">View Bugs
+        Statistics</a></li>
+      <li role="presentation" routerLinkActive="active">
+        <a mat-list-item routerLink="notifications"
+           i18n="viewNotification|The field is viewNotification"> View
+        notifications</a></li>
+      <li role="presentation" routerLinkActive="active">
+        <a mat-list-item routerLink="view-profile"
+           i18n="changePassword|The field is changePassword"> Change
+        password</a></li>
+      <li role="presentation" routerLinkActive="active">
+        <a mat-list-item (click)="logout()" href=""
+           i18n="logOut|The field is logOut">Logout</a>
+
+      </li>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh">
+        <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,140 @@
+<form #f='ngForm'>
+
+  <mat-card class="example-card">
+
+    <mat-card-title i18n="insertbutton|Inserting a bug">Insert Bug</mat-card-title>
+
+
+    <mat-divider></mat-divider>
+    <br>
+
+    <mat-form-field class="form-group">
+      <input #title="ngModel" [(ngModel)]="bug.title"
+             class="form-control"
+             id="title"
+             matInput
+             name="title"
+             ngModel
+             placeholder="Title"
+             required
+             type="text"
+             i18n="title|Title of the bug">
+      <mat-error *ngIf="title.touched && title.invalid">
+        <mat-error *ngIf="title.errors.required" i18n="fieldrequired|The field is required">The field is required
+        </mat-error>
+      </mat-error>
+
+
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <input [(ngModel)]="bug.fixedVersion"
+             class="form-control"
+             id="fixedVersion"
+             matInput
+             name="fixedVersion"
+             ngModel
+             placeholder="Fixed Version"
+             type="text"
+             i18n="fixedVersion|Fixed  Version of  a bug">
+
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form-group">
+      <input #description="ngModel" [(ngModel)]="bug.description"
+             class="form-control"
+             id="description"
+             matInput
+             name="description"
+             ngModel
+             placeholder="Description"
+             required
+             type="text"
+             i18n="description|Description of a bug">
+      <mat-error
+        *ngIf="description.touched && description.invalid">
+        <mat-error *ngIf="description.errors.required" i18n="fieldrequired|The field is required">The field is
+          required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field class="col-lg-12">
+      <input #version="ngModel"
+             [(ngModel)]="bug.version"
+             class="form-control"
+             id="version"
+             matInput
+             name="version"
+             ngModel
+             pattern="^[a-zA-Z]*[0-9].[0-9]"
+             placeholder="Version"
+             required
+             type="text"
+             #version="ngModel"
+             i18n="Version|Version of  a bug">
+
+      <mat-error *ngIf="version.touched && version.invalid"
+                 class="alert alert-danger">
+        <mat-error *ngIf="version.errors.required" i18n="fieldrequired|The field is required">The field is required
+        </mat-error>
+        <mat-error *ngIf="version.errors.pattern" i18n="numberIsInvalid|The number is invalid">Number is invalid
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input [(ngModel)]="bug.targetDate" [matDatepicker]="picker"
+             matInput
+             name="date"
+             ngModel
+             placeholder="Choose a date"
+             required
+             i18n="dateChoose|The choosen date"
+      >
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Severity</mat-label>
+
+      <mat-select matNativeControl
+                  [(ngModel)]="bug.severity"
+                  name="severity"
+                  ngModel required>
+        <mat-option value="Low" i18n="low|The field is low">Low</mat-option>
+        <mat-option value="Medium" i18n="medium|The field is medium">Medium</mat-option>
+        <mat-option value="High" i18n="high|The field is high">High</mat-option>
+        <mat-option value="Critical" i18n="critical|The field is critical">Critical</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Assigned to:</mat-label>
+      <mat-select [(ngModel)]="bug.ASSIGNED_ID"
+                  name="roles"
+                  ngModel>
+        <mat-option *ngFor="let user of usersList" [value]="user.id">{{user.userName}}</mat-option>
+      </mat-select>
+
+
+    </mat-form-field>
+
+
+    <!--  </mat-card-content>-->
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card>
+
+  <button (click)="insert()"
+          [disabled]="f.invalid"
+          mat-raised-button>
+    Submit
+  </button>
+</form>
+

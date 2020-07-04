@@ -1,0 +1,111 @@
+<form #f='ngForm'>
+  <mat-card class="example-card">
+    <mat-card-title i18n="viewbug|The viewbug field">View Bug</mat-card-title>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field class="form-group">
+      <label>Title</label>
+      <input #title="ngModel" [(ngModel)]="bug.title"
+             id="title"
+             class="form-control"
+             name="title"
+             ngModel
+             placeholder="Title"
+             readonly
+             type="text"
+             i18n="title| The title is required">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-lg-12">
+      <label i18n="description|The field is description">Description</label>
+      <input [(ngModel)]="bug.description"
+
+             id="description"
+             name="description"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+
+      <label i18n="version|The field is version"> Version</label>
+      <input #version="ngModel"
+             [(ngModel)]="bug.version"
+             id="version"
+             name="version"
+             ngModel
+             pattern="^[a-zA-Z0-9.]*$"
+             readonly
+             required
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <label i18n="targetdate|The field is targetdate"> Target Date</label>
+      <input #version="ngModel"
+             [(ngModel)]="bug.targetDate"
+
+             id="targetDate"
+             name="targetDate"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+
+      <label i18n="status|The field is status">Status</label>
+      <input #version="ngModel"
+             [(ngModel)]="bug.status"
+
+             id="status"
+             name="status"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <label i18n="fixedversion|The field is fixedversion"> Fixed Version</label>
+      <input [(ngModel)]="bug.fixedVersion"
+
+             id="fixedVersion"
+             name="fixedVersion"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+
+      <label i18n="severity|The field is severity">Severity</label>
+      <input [(ngModel)]="bug.severity"
+
+             id="severity"
+             name="severity"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+
+      <label i18n="createdby|The field is createdby">Created by user:</label>
+      <input [(ngModel)]="bug.usernameCreatedBy"
+
+             id="createdId"
+             name="createdId"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+    <mat-form-field class="form-group">
+
+      <label i18n="assignedtouserbyid|The field is assignedtouser by id">Assigned to user with id:</label>
+      <input [(ngModel)]="bug.usernameAssignTo"
+             id="assignedId"
+             name="assignedId"
+             ngModel
+             readonly
+             type="text">
+    </mat-form-field>
+
+    <mat-card-actions></mat-card-actions>
+  </mat-card>
+
+</form>

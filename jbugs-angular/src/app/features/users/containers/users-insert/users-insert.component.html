@@ -1,0 +1,117 @@
+<form #f='ngForm'>
+
+  <mat-card class="example-card">
+    <mat-card-title  i18n="isnertUser|The field is insertUser">Insert User</mat-card-title>
+    <mat-divider></mat-divider>
+    <br>
+
+    <div class="format1">
+      <mat-form-field class="col-lg-12">
+
+        <input #firstName="ngModel" [(ngModel)]="user.firstName"
+               class="form-control"
+               id="firstName"
+               matInput
+               name="firstName"
+               ngModel
+               placeholder="First Name"
+               required
+               type="text"  i18n="firstName|The field is firstName">
+        <mat-error *ngIf="firstName.touched && firstName.invalid"
+                   class="alert alert-danger">
+          <mat-error *ngIf="firstName.errors.required"  i18n="fieldRequired|The field is fieldRequired">The field is required</mat-error>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="col-lg-12">
+        <input #lastName="ngModel" [(ngModel)]="user.lastName"
+               class="form-control"
+               id="lastName"
+               matInput
+               name="lastName"
+               ngModel
+               placeholder="Last Name"
+               required
+               type="text"
+               i18n="lastName|The field is lastName">
+
+        <mat-error *ngIf="lastName.touched && lastName.invalid"
+                   class="alert alert-danger">
+          <mat-error *ngIf="lastName.errors.required"  i18n="fieldRequired|The field is fieldRequired">The field is required</mat-error>
+
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field class="col-lg-12">
+      <input #mobileNumber="ngModel" [(ngModel)]="user.mobileNumber"
+             class="form-control"
+             id="mobileNumber"
+             matInput
+             name="mobileNumber"
+             ngModel
+             pattern="[+]4[0,9]{1}[0-9]{9}"
+             placeholder="Mobile Number"
+             required
+             type="text"
+             i18n="phone|The field is phone">
+
+      <mat-error *ngIf="mobileNumber.touched && mobileNumber.invalid"
+                 class="alert alert-danger">
+        <mat-error *ngIf="mobileNumber.errors.required"
+                   i18n="fieldRequired|The field is fieldRequired">The field is required</mat-error>
+        <mat-error *ngIf="mobileNumber.errors.pattern"
+                   i18n="number|The field is number">Number is invalid</mat-error>
+
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field class="col-lg-12">
+      <input #email="ngModel" [(ngModel)]="user.email"
+             class="form-control"
+             id="email"
+             matInput
+             name="email"
+             ngModel
+             pattern="^[a-z0-9._%+-]+@msggroup.com|[a-z0-9._%+-]+@gmail.com"
+             placeholder="Email"
+             required
+             i18n="email|The field is email"
+
+             type="text">
+
+      <mat-error *ngIf="email.touched && email.invalid "
+                 class="alert alert-danger">
+        <mat-error *ngIf="email.errors.required"  i18n="fieldRequired|The field is fieldRequired">The field is required</mat-error>
+        <mat-error *ngIf="email.errors.pattern"  i18n="required|The field is required">Requires a msg group or a gmail address !</mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="col-lg-12">
+      <mat-label>Rol</mat-label>
+      <mat-select [(ngModel)]="user.roles"
+                  multiple
+                  name="roles" ngModel>
+        <mat-option *ngFor="let rol of roles" [value]="rol">{{rol}}</mat-option>
+      </mat-select>
+
+
+    </mat-form-field>
+  </mat-card>
+
+  <mat-divider></mat-divider>
+
+  <button mat-raised-button
+          (click)="insert()"
+          [disabled]="f.invalid"  i18n="submit|The field is submit">Submit
+  </button>
+
+</form>
+

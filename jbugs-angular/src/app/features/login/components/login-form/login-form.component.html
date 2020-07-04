@@ -1,0 +1,53 @@
+<html>
+<body>
+<div class="container">
+  <div class="login-content">
+    <form class="formContainer" novalidate>
+      <h2 class="title"
+          i18n="welcome|The field is welcome">Welcome</h2>
+      <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <input #userName="ngModel" [(ngModel)]="loginInput.username"
+                           id="userName"
+                        matInput
+                         name="userName"
+                           ngModel
+                         required
+                           placeholder="Enter your name"class="input"
+                 i18n="enterName|The field is enterName">
+                    </div>
+                  </div>
+                  <div class="input-div pass">
+                    <div class="i">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                      <input type="password" class="input"
+                             #password="ngModel" [(ngModel)]="loginInput.password"
+
+                                   id="password"
+                                    matInput
+                                       name="password"
+                                       ngModel
+                                       required
+                                       placeholder="Enter your password"
+                             i18n="enterPassword|The field is enterPassword"
+                                       [type]="hide ? 'password' : 'text'">
+
+                    </div>
+                  </div>
+                  <a href="#"
+                     i18n="forgotPasswrod|The field is forgotPassword">Forgot Password?</a>
+      <button mat-button type="submit"
+                   class="btn"
+                       (click)="sendCredentials()" i18n="Login|The field for Login">Login
+                 </button>
+                </form>
+              </div>
+            </div>
+            <script type="text/javascript"></script>
+            </body>
+            </html>

@@ -1,0 +1,68 @@
+.test {
+
+  width: 100%;
+}
+.navColor{
+  background-color: #38d39f;
+}
+.photosSize{
+  width: 2rem;
+  height: 2rem;
+}
+.material {
+  color: #38d39f;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: absolute;
+  right: 5px;
+}
+.second-material {
+  color: #38d39f;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: absolute;
+  right: 100px;
+}
+
+.third-material {
+  width: 2rem;
+  height: 2rem;
+  color: #38d39f;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: absolute;
+  right: 200px;
+}
+.fourth-material {
+  width: 2rem;
+  height: 2rem;
+  color: #38d39f;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: absolute;
+  right: 300px;
+}
+.five-material {
+  width: 2rem;
+  height: 2rem;
+  color: #38d39f;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: absolute;
+  right: 400px;
+}

@@ -328,6 +328,18 @@
   dependencies:
     "@nguniversal/common" "9.1.1"
 
+"@ngx-translate/core@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-12.1.2.tgz#0c6f24249953a79cfc2d581b2cd1b5d6d338d9db"
+  integrity sha512-ZudJsqIxTKlLmPoqK8gJY3UpMGujR0Xm7HfXL6AR79yGRS23QqpjAhMfx4v5qUCcHMmQ9/78bW8QJLfp31c7vQ==
+
+"@ngx-translate/http-loader@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-4.0.0.tgz#8a555248ad4b7d513460fcec9da25b0447962f1d"
+  integrity sha512-x8LumqydWD7eX9yQTAVeoCM9gFUIGVTUjZqbxdAUavAA3qVnk9wCQux7iHLPXpydl8vyQmLoPQR+fFU+DUDOMA==
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@7.3.10":
   version "7.3.10"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.3.10.tgz#0f94e9d206c6a240f832f1cd5d0e6b65deb0dc28"
@@ -4385,9 +4397,9 @@ lodash.tail@^4.1.1:
   integrity sha1-0jM6NtnncXyK0vfKyv7HwytERmQ=
 
 lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.12:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log4js@^4.0.0:
   version "4.5.1"
